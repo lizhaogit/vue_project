@@ -1,7 +1,7 @@
 <template>
   <el-container>
     <el-container>
-      <el-aside width="240px" style="background-color: rgb(238, 241, 246)">
+      <el-aside width="240px">
         <el-menu :default-openeds="menuOpeneds" :default-active="menuActive" text-color="#414351"
                  :unique-opened="true" router>
 
@@ -57,11 +57,7 @@
   }
 </script>
 
-<style scoped >
-
-  .left{
-    width: 240px;
-  }
+<style scoped>
 
   .right {
     flex: 1;
