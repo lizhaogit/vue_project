@@ -2,12 +2,15 @@
   <div class="hello">
     <h2>登录</h2>
     <ul>
-      <el-form ref="form" :model="form" label-width="80px">
+      <el-form ref="form" :model="form" :rules="rules" label-width="80px">
         <el-form-item label="用户名">
           <el-input v-model="form.name"></el-input>
         </el-form-item>
         <el-form-item label="密码">
           <el-input type="password" v-model="form.password"></el-input>
+        </el-form-item>
+        <el-form-item label="测试" prop="number">
+          <el-input v-model.number="form.number" type="number"></el-input>
         </el-form-item>
         <el-form-item>
           <el-button type="primary" @click="onSubmit">登录</el-button>
@@ -25,8 +28,12 @@
     data() {
       return {
         form: {
-          name: '15501056914',
-          password: 'asd123456'
+          name: '',
+          password: '',
+          number: ''
+        },
+        rules: {
+          number: [{type: 'number', required: true, message: '请输入数字类型', trigger: 'blur'}]
         },
         menu: []
       }
